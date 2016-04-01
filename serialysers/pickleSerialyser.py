@@ -13,7 +13,7 @@ class PickleSerialyser(object):
             matches = pickle.load(f)
             return matches
 
-    def saveMatches(self, matches, fileName='matches.pickle'):
+    def saveMatches(self, matches, fileName='matches.pickle'): 
         """
         Save objects to file
         :param matches:
