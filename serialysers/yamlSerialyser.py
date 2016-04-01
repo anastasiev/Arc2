@@ -17,6 +17,7 @@ class YamlSerialyser(object):
             matches = load(f, Loader=Loader)
             return matches
 
+
     def saveMatches(self, matches,  fileName='matches.yaml'):
         """
         Save objects to file
