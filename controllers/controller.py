@@ -1,5 +1,6 @@
 import configparser
 
+from controllers.base_controller import Controller
 from serialysers.jsonSerialyser import JsonSerialyser
 from serialysers.pickleSerialyser import PickleSerialyser
 from serialysers.yamlSerialyser import YamlSerialyser
@@ -7,14 +8,10 @@ from services.matchFactory import *
 from services.matchesService import *
 
 
-class MatchesController(object):
+class MatchesController(Controller):
     """
     Controller witch connect console view and matches services
     """
-    def __init__(self):
-        self.view = ConsoleView()
-        self.factory = MatchFactory()
-        self.service = MatchesService()
 
     def navigation(self):
         """
@@ -54,17 +51,4 @@ class MatchesController(object):
             else:
                 self.view.printMessage("Please try again")
 
-    def _getSerialiseMethod(self):
-        """
-        Choose serialisation method from config file
-        :return:
-        """
-        parser = configparser.ConfigParser()
-        parser.read("property.cfg")
-        method = parser["serialize_method"]['method']
-        if method == "pickle":
-            return PickleSerialyser()
-        elif method == "yaml":
-            return YamlSerialyser()
-        elif method == "json":
-            return JsonSerialyser()
+

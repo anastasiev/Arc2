@@ -1,4 +1,6 @@
-from controllers.controller import *
+from controllers.command_line_controller import CommandLineController
+from services.controllerFactory import ControllerFactory
 
-controller = MatchesController()
+factory = ControllerFactory()
+controller = factory.getController()
 controller.navigation()

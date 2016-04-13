@@ -2,7 +2,10 @@ import io
 
 
 
-def getStringFromSerialyser(serialyser, matches):
-    out = io.StringIO
-    serialyser.saveMatches(matches, out)
+def getStringFromSerialyser(fileName = "matches.json"):
+    out = io.StringIO()
+    with open(fileName, 'rt') as f:
+        for line in f:
+            out.write(line)
+
     return out

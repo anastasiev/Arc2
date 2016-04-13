@@ -1,4 +1,5 @@
 from yaml import load, dump
+
 try:
     from yaml import CLoader as Loader, CDumper as Dumper
 except ImportError:
@@ -6,7 +7,6 @@ except ImportError:
 
 
 class YamlSerialyser(object):
-
     def loadMatches(self, fileName='matches.yaml'):
         """
         Load objects from file
@@ -17,7 +17,7 @@ class YamlSerialyser(object):
             matches = load(f, Loader=Loader)
             return matches
 
-    def saveMatches(self, matches,  fileName='matches.yaml'):
+    def saveMatches(self, matches, fileName='matches.yaml'):
         """
         Save objects to file
         :param matches:

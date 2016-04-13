@@ -2,7 +2,6 @@ import pickle
 
 
 class PickleSerialyser(object):
-
     def loadMatches(self, fileName='matches.pickle'):
         """
         Load objects from file

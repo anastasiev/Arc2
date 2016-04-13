@@ -11,10 +11,7 @@ class ConsoleView(object):
         :return:
         """
         for match in matches:
-            print(
-                "%s vs %s - %s:%s on %s/%s/%s in %s" %
-                (match.team1, match.team2, match.res1, match.res2,
-                 match.date[0], match.date[1], match.date[2], match.country))
+            print(match)
 
     def showMenu(self):
         """
